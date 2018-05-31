@@ -55,8 +55,13 @@ public class ResultListAdapter extends BaseAdapter {
         thumbnail.setImageBitmap((Bitmap) object.get("image"));
 
 
+
+
         // ************************************************************************
         // INICIO - CODE4
+        // anidismo el precio
+        TextView precio = (TextView)vp.findViewById(R.id.price);
+        precio.setText((String) object.get("price"));
 
 
         // FIN - CODE4

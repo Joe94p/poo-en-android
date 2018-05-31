@@ -1,5 +1,7 @@
 package facci.pm.ta2.poo.pra1;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -72,8 +74,16 @@ public class ResultsActivity extends AppCompatActivity implements  ListView.OnIt
 
 
         // INICIO - CODE5
-        //
+        // Crea una instancia de la activity del tipo DetailActivity
+        //al pasar a la otra actividad el nombre, descripcion, precio y ademas de la imagen
         DataObject object = (DataObject) m_adapter.m_array.get(position);
+        Intent data= new Intent(getApplicationContext(), DetailActivity.class);
+        data.putExtra ("id", object.get("price").toString());
+        data.putExtra ("id1", object.get("description").toString());
+        data.putExtra ("id2", object.get("name").toString());
+        data.putExtra("img", (Bitmap) object.get("image"));
+        startActivity(data);
+
 
         // FIN - CODE5
 
